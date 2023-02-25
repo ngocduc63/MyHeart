@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trái Tim</title>
+    <style> 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        } 
+        .content {
+            margin-top: 200px;
+            display: flex;
+            justify-content: center;
+            animation: beat 0.5s infinite;
+        }      
+        .heart,
+        .heart::before, 
+        .heart::after {
+            width: 200px;
+            height: 200px;
+        }
+        .heart {
+            transform: rotate(45deg);
+            position: relative;
+            background-color: red;
+        }
+        .heart::after, .heart::before {
+            background-color: red;
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+        }
+        .heart::after { left:  -100px;}
+        .heart::before { top: -100px; }
+
+        @keyframes beat {
+            0% {
+                transform: scale(0.90);
+            }
+            20% {
+                transform: scale(1.15);
+            }
+            40% {
+                transform: scale(1.35);
+            }          
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="beat">
+            <div class="heart"></div>
+        </div>
+    </div>
+</body>
+</html>
